@@ -8,6 +8,22 @@
 http://www.jianshu.com/p/3f9b78c68887?utm_campaign=hugo&utm_medium=reader_share&utm_content=note&utm_source=weixin-friends#
 
 
+# 地图功能实现 #
+
+## 1. 创建新的空白项目 ##
+
+在创建的默认程序中，出现如下错误信息:
+```
+编译 .wxml 文件错误，错误信息：未找到页面 pages/index/index 对应的wxml文件
+
+```
+
+注意要选择文件目录，确保此文件目录为空
+
+
+
+
+
 
 
 # 知识点 #

@@ -1,0 +1,6 @@
+/**app.wxss**/
+.container {
+	/* vh代表可视区域的纵向高度*1%，所以 100vh 正好代表垂直方向上铺满 */
+	height: 100vh;
+	background-color: #f2f2f2;
+} 
