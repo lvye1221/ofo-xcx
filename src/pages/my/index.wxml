@@ -1,0 +1,11 @@
+<!--index.wxml-->
+<view class="container">
+
+  <view class="user-info">
+	<!-- 用户信息  -->
+	<text>{{userInfo.nickName}}</text>
+  </view>
+
+  <button bindtap="bindAction" class="btn-login" hover-class="gray" type="{{bType}}" >{{actionText}}</button>
+ 
+</view>

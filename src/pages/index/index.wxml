@@ -5,5 +5,10 @@
        longitude="{{longitude}}" 
        scale="{{scale}}"
 	   controls="{{controls}}"
+	   bindcontroltap="bindcontroltap"
+	   markers="{{markers}}"
+	   bindmarkertap="bindmarkertap"
+	   polyline="{{polyline}}"
+	   bindregionchange="bindregionchange"
        show-location />    
 </view>
