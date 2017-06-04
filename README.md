@@ -86,10 +86,34 @@ this.setData({
 ## 5. 用户拖动地图事件 ##
 
 ```
+this.mapCtx.getCenterLocation({
+	success: function(res) {
+		console.log(res.longitude);
+		console.log(res.latitude);
+	}
+});
 
 ```
 
+
+
 # 个人信息的页面 #
+
+
+## onLoad ##
+
+```
+		// 设置本页导航标题
+		wx.setNavigationBarTitle({
+			title: '个人中心'
+		});
+
+		// 获取本地数据-用户信息
+		wx.getStorage({
+			key: 'userInfo',
+			// 能获取到则显示用户信息，并保持登录状态，不能就什么也不做
+
+```
 
 
 

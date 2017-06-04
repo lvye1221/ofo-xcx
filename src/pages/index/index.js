@@ -9,7 +9,10 @@ Page({
 	},
 
 	// 更新单车位置
-	updateMarkers: function() {
+	updateMarkers: function(res) {
+
+		console.log(res.longitude);
+		console.log(res.latitude);
 
 		var markers = {
 			"data": [
@@ -30,8 +33,8 @@ Page({
 				"id": i,
 				"title": "去这里",
 				"iconPath": "/images/markers.png",
-				"latitude": this.data.latitude + (Math.random() - 0.5) / 100,
-				"longitude": this.data.longitude + (Math.random() - 0.5) / 100,
+				"latitude": res.latitude + (Math.random() - 0.5) / 100,
+				"longitude": res.longitude + (Math.random() - 0.5) / 100,
 				"width": 45,
 				"height": 50
 			};
@@ -74,7 +77,7 @@ Page({
 				// console.log(this.data.latitude);
 
 
-				this.updateMarkers();
+				this.updateMarkers(res);
 
 			}
 		});
@@ -216,10 +219,24 @@ Page({
 
 	// 区域改变事件
 	bindregionchange: function(e) {
+		var that = this;
+
+		console.log(e);
+
 		if (e.type == "begin") {
 			
 		} else if (e.type == "end") {
-			this.updateMarkers();
+
+
+			this.mapCtx.getCenterLocation({
+				success: function(res) {
+					console.log(res.longitude);
+					console.log(res.latitude);
+
+					that.updateMarkers(res);
+				}
+			});
+
 		}
 	},
 
