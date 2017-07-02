@@ -193,3 +193,22 @@ block wx:if
 ```
 
 注意： <block/> 并不是一个组件，它仅仅是一个包装元素，不会在页面中做任何渲染，只接受控制属性。
+
+
+
+---------
+
+display: flex; justify-content: center; align-items: center;著作权归作者所有。
+
+---------
+
+设置 导航栏 中的标题
+
+```
+// 设置本页导航标题
+wx.setNavigationBarTitle({
+	title: '个人中心'
+});
+
+```
+		

@@ -111,8 +111,8 @@ Page({
 					}, {
 						id: 3,
 						iconPath: '/images/warn.png',
-						position: {
-							left: res.windowWidth - 70,
+            position: {
+              left: res.windowWidth - 70,
 							top: res.windowHeight - 80,
 							width: 50,
 							height: 50

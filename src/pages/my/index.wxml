@@ -2,11 +2,11 @@
 <view class="container">
 
   <view class="user-info">
-	<!-- 用户信息  -->
+	<!-- 鐢ㄦ埛淇℃伅  -->
 
 	<block wx:if="{{userInfo.avatarUrl != ''}}">
 	    <image src="{{userInfo.avatarUrl}}"></image>
-	</block>
+	</block> 
 
 	<text>{{userInfo.nickName}}</text>
   </view>

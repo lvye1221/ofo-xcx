@@ -1,0 +1,16 @@
+<!--pages/warn/index.wxml-->
+
+<view class="space"></view>
+
+<view class="grid">
+    <image src="/images/avatar.png"></image>
+    <image src="/images/avatar.png"></image>
+</view>
+
+
+<view class="grid">
+    <image src="/images/avatar.png"></image>
+    <image src="/images/avatar.png"></image>
+</view>
+
+<view class="space"></view>
