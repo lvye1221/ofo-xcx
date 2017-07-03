@@ -1,6 +1,62 @@
 //index.js
 //获取应用实例
 var app = getApp()
+
+
+var c = {
+    controls: [{
+        id: 1,
+        iconPath: "/images/location.png",
+        position: { // 控件位置
+            left: 20, // 单位px
+            top: 80, // 根据设备高度设置top值，可以做到在不同设备上效果一致
+            width: 50, // 控件宽度/px
+            height: 50 // 控件高度/px
+        },
+        clickable: true // 是否可点击，默认为true,可点击
+    }, {
+        id: 2,
+        iconPath: '/images/use.png',
+        position: {
+            left: 0,
+            top: 100,
+            width: 100,
+            height: 190
+        },
+        clickable: true
+    }, {
+        id: 3,
+        iconPath: '/images/warn.png',
+        position: {
+            left: 0 - 70,
+            top: 0 - 80,
+            width: 50,
+            height: 50
+        },
+        clickable: true
+    }, {
+        id: 4,
+        iconPath: '/images/marker.png',
+        position: {
+            left: 0 / 2 - 11,
+            top: 0 / 2 - 45,
+            width: 22,
+            height: 45
+        },
+        clickable: false
+    }, {
+        id: 5,
+        iconPath: '/images/avatar.png',
+        position: {
+            left: 0 - 68,
+            top: 0 - 155,
+            width: 45,
+            height: 45
+        },
+        clickable: true
+    }]
+};
+
 Page({
 	data: {
 		scale: 15,
@@ -87,59 +143,61 @@ Page({
 		wx.getSystemInfo({ // 系统API,获取系统信息，比如设备宽高
 			success: (res) => {
 				// 定义控件数组，可以在data对象初始化为[],也可以不初始化，取决于是否需要更好的阅读
-				this.setData({
-					controls: [{
-						id: 1,
-						iconPath: "/images/location.png",
-						position: { // 控件位置
-							left: 20, // 单位px
-							top: res.windowHeight - 80, // 根据设备高度设置top值，可以做到在不同设备上效果一致
-							width: 50, // 控件宽度/px
-							height: 50 // 控件高度/px
-						},
-						clickable: true // 是否可点击，默认为true,可点击
-					}, {
-						id: 2,
-						iconPath: '/images/use.png',
-						position: {
-							left: res.windowWidth/2 - 45,
-							top: res.windowHeight - 100,
-							width: 90,
-							height: 90
-						},
-						clickable: true
-					}, {
-						id: 3,
-						iconPath: '/images/warn.png',
-            position: {
-              left: res.windowWidth - 70,
-							top: res.windowHeight - 80,
-							width: 50,
-							height: 50
-						},
-						clickable: true
-					}, {
-						id: 4,
-						iconPath: '/images/marker.png',
-						position: {
-							left: res.windowWidth/2 - 11,
-							top: res.windowHeight/2 - 45,
-							width: 22,
-							height: 45
-						},
-						clickable: false
-					}, {
-						id: 5,
-						iconPath: '/images/avatar.png',
-						position: {
-							left: res.windowWidth - 68,
-							top: res.windowHeight - 155,
-							width: 45,
-							height: 45
-						},
-						clickable: true
-					}]
-				});
+                c = {
+                    controls: [{
+                        id: 1,
+                        iconPath: "/images/location.png",
+                        position: { // 控件位置
+                            left: 20, // 单位px
+                            top: res.windowHeight - 80, // 根据设备高度设置top值，可以做到在不同设备上效果一致
+                            width: 50, // 控件宽度/px
+                            height: 50 // 控件高度/px
+                        },
+                        clickable: true // 是否可点击，默认为true,可点击
+                    }, {
+                        id: 2,
+                        iconPath: '/images/use.png',
+                        position: {
+                            left: 0,
+                            top: res.windowHeight - 100,
+                            width: res.windowWidth,
+                            height: 190
+                        },
+                        clickable: true
+                    }, {
+                        id: 3,
+                        iconPath: '/images/warn.png',
+                        position: {
+                            left: res.windowWidth - 70,
+                            top: res.windowHeight - 80,
+                            width: 50,
+                            height: 50
+                        },
+                        clickable: true
+                    }, {
+                        id: 4,
+                        iconPath: '/images/marker.png',
+                        position: {
+                            left: res.windowWidth / 2 - 11,
+                            top: res.windowHeight / 2 - 45,
+                            width: 22,
+                            height: 45
+                        },
+                        clickable: false
+                    }, {
+                        id: 5,
+                        iconPath: '/images/avatar.png',
+                        position: {
+                            left: res.windowWidth - 68,
+                            top: res.windowHeight - 155,
+                            width: 45,
+                            height: 45
+                        },
+                        clickable: true
+                    }]
+                };
+
+				this.setData(c);
 			}
 		});
 
@@ -165,16 +223,30 @@ Page({
 
 		console.log(e.controlId);
 
-		switch(e.controlId) {
-		// 点击定位控件
-		case 1:
-			this.movetoPosition();
-			break;
+        switch (e.controlId) {
+        // 点击定位控件
+        case 1:
+            this.movetoPosition();
+            break;
+            
+        // 点击扫码控件
+        case 2:
+
+            c.controls[1].position.top = 0;
+
+            this.setData(c);
+
+            
+            
+            console.log("扫码");
+
+
+            break;
 
 			// 点击保障控件，跳转到报障页
 		case 3:
 			wx.navigateTo({
-				url: '../warn/index'
+				url: '/pages/warn/index'
 			});
 
 			break;
