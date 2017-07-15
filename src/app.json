@@ -1,7 +1,7 @@
 {
   "pages":[
-    "pages/my/index",
     "pages/index/index",
+    "pages/weixiu/weixiu",
     "pages/logs/logs"
   ],
   "window":{

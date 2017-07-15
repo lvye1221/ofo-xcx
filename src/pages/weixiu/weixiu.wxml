@@ -1,0 +1,28 @@
+<!--pages/weixiu/weixiu.wxml-->
+<view class="body">
+  
+  <view class="all">
+    
+      <button class="btn2" bindtap="sisuo">
+        <image src="/ofo_img/维修img/key_icon.png" class="yellow"></image>
+      </button>
+    
+      <button class="btn2" bindtap="sunhuai">
+        <image src="/ofo_img/维修img/wrench_icon.png" class="yellow"></image>
+      </button>
+    
+      <button class="btn2" bindtap="meiche">
+        <image src="/ofo_img/维修img/unavailable.png" class="yellow"></image>
+      </button>
+    
+      <button class="btn2" bindtap="luanting">
+        <image src="/ofo_img/维修img/stop_icon.png" class="yellow"></image>
+      </button>
+
+  </view>
+  <view class="clo">
+    <button class="but1" bindtap="back">
+      <image src="/ofo_img/维修img/close_icon.png" class="close"></image>
+    </button>
+  </view>
+</view>

@@ -1,23 +1,10 @@
 /**index.wxss**/
-.container {
-	width: 100%;
-	height: 100vh;
-
-	/* 设置相对定位 */
-	position: relative;
+/* 样式*/
+.container{
+   /*vh单位代表当前页面的百分比*/
+  height: 100vh;
 }
-
-/* 地图样式的修饰 */
-#ofoMap {
-	width: 100%;
-	height: 100%;
-
-	position: absolute;
-	left: 0;
-	top: 0;
-	bottom: 0;
-	right: 0;
-
-	z-index: 1;
+.a{
+  height: 100%;
+  width: 100%;
 }
-
