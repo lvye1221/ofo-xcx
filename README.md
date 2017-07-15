@@ -85,14 +85,30 @@ this.setData({
 
 ## 5. 用户拖动地图事件 ##
 
-```
-this.mapCtx.getCenterLocation({
-	success: function(res) {
-		console.log(res.longitude);
-		console.log(res.latitude);
-	}
-});
 
+```
+绑定区域移动的事件
+bindregionchange="bindregionchange"
+
+
+
+bindregionchange: function(e) {
+	var that = this;
+
+	console.log(e);
+
+	if (e.type == "begin") {
+		
+	} else if (e.type == "end") {
+
+		this.mapCtx.getCenterLocation({
+			success: function(res) {
+				console.log(res.longitude);
+				console.log(res.latitude);
+			}
+		});
+		
+		
 ```
 
 
